@@ -9,6 +9,7 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    publicPath: "./",
   },
   module: {
     rules: [
@@ -18,7 +19,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
       {
         test: /\.(woff2?|ttf|eot|otf)$/,
@@ -37,9 +38,7 @@ module.exports = {
       filename: "styles/index.css",
     }),
     new CopyPlugin({
-      patterns: [
-        { from: "images", to: "images" },
-      ],
+      patterns: [{ from: "images", to: "images" }],
     }),
   ],
   devServer: {

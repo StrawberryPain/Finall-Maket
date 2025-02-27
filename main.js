@@ -1,5 +1,5 @@
 "use strict";
-import "/styles/index.css";
+import "/styles/index.scss";
 
 const swiperOptions = {
   loop: true,

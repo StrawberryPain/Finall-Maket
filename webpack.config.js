@@ -5,11 +5,12 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./main.js",
+  devtool: "source-map",
   output: {
-    filename: "bundle.js",
+    filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    publicPath: "./",
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -27,6 +28,7 @@ module.exports = {
         generator: {
           filename: "fonts/[name][ext]",
         },
+        include: path.resolve(__dirname, "fonts"),
       },
     ],
   },
@@ -38,7 +40,10 @@ module.exports = {
       filename: "styles/index.css",
     }),
     new CopyPlugin({
-      patterns: [{ from: "images", to: "images" }],
+      patterns: [
+        { from: "images", to: "images" },
+        { from: "fonts", to: "fonts" },
+      ],
     }),
   ],
   devServer: {

@@ -43,7 +43,7 @@ buttonExpand.addEventListener("click", () => {
   toggleClassName(menu, "expanded");
 });
 
-const repairToggle = document.querySelector('.container-repair__toggle');
+const repairToggle = document.querySelector('.container-toggle');
 const repairContainer = document.querySelector('.container-repair');
 
 repairToggle.addEventListener("click", () => {
